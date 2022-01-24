@@ -27,3 +27,12 @@ yarn deploy-prod
 ## Configuring the DB:
 
 TODO!
+
+## Documentation:
+
+- `/system`
+  - colors
+- `/system/button`
+  - Buttons
+- `/system/type-scale`
+  - Font sizes
