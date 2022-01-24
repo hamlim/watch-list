@@ -13,30 +13,22 @@ let fontScale = 1.2
 
 let baseFontSize = 18
 
-let fontSizes = {
+let baseFontSizes = {
   0: `${0.8 * baseFontSize}px`,
   1: `${baseFontSize}px`,
   2: `${baseFontSize * fontScale}px`,
   3: `${baseFontSize * (fontScale * 2)}px`,
   4: `${baseFontSize * (fontScale * 3)}px`,
-  get h1() {
-    return this[4]
-  },
-  get h2() {
-    return this[3]
-  },
-  get h3() {
-    return this[2]
-  },
-  get h4() {
-    return this[1]
-  },
-  get h5() {
-    return this[1]
-  },
-  get h6() {
-    return this[1]
-  },
+}
+
+let fontSizes = {
+  ...baseFontSizes,
+  h1: baseFontSizes[4],
+  h2: baseFontSizes[3],
+  h3: baseFontSizes[2],
+  h4: baseFontSizes[1],
+  h5: baseFontSizes[1],
+  h6: baseFontSizes[1],
 }
 
 let baseColors = {
@@ -176,40 +168,18 @@ let baseColors = {
 let colors = {
   ...baseColors,
   white: '#fdfefe',
-  get primary(): string {
-    return this.blue500
-  },
-  get primaryLight(): string {
-    return this.blue200
-  },
-  get primaryDark(): string {
-    return this.blue700
-  },
-  get secondary(): string {
-    return this.teal500
-  },
-  get secondaryLight(): string {
-    return this.teal200
-  },
-  get secondaryDark(): string {
-    return this.teal700
-  },
-  get tertiary(): string {
-    return this.violet500
-  },
-  get tertiaryLight(): string {
-    return this.violet200
-  },
-  get tertiaryDark(): string {
-    return this.violet700
-  },
-
-  get disabledBg(): string {
-    return this.gray200
-  },
-  get disabledFill(): string {
-    return this.gray500
-  },
+  background: baseColors.orange000,
+  primary: baseColors.blue500,
+  primaryLight: baseColors.blue200,
+  primaryDark: baseColors.blue700,
+  secondary: baseColors.teal500,
+  secondaryLight: baseColors.teal200,
+  secondaryDark: baseColors.teal700,
+  tertiary: baseColors.violet500,
+  tertiaryLight: baseColors.violet200,
+  tertiaryDark: baseColors.violet700,
+  disabledBg: baseColors.gray200,
+  disabledFill: baseColors.gray500,
 }
 
 export let vars = createGlobalTheme(':root', {
@@ -243,13 +213,11 @@ export let vars = createGlobalTheme(':root', {
     top: '50',
   },
   breakpoints,
-  get mediaQueries() {
-    return {
-      small: `@media screen and (min-width: ${this.breakpoints[0]})`,
-      medium: `@media screen and (min-width: ${this.breakpoints[1]})`,
-      large: `@media screen and (min-width: ${this.breakpoints[2]})`,
-      xLarge: `@media screen and (min-width: ${this.breakpoints[3]})`,
-    }
+  mediaQueries: {
+    small: `@media screen and (min-width: ${breakpoints[0]})`,
+    medium: `@media screen and (min-width: ${breakpoints[1]})`,
+    large: `@media screen and (min-width: ${breakpoints[2]})`,
+    xLarge: `@media screen and (min-width: ${breakpoints[3]})`,
   },
   colors,
   lists: {
@@ -289,6 +257,8 @@ export let vars = createGlobalTheme(':root', {
       paddingTop: '0',
     },
   },
+  // TODO: Move these into individual components instead!
+  /*
   get banners() {
     return {
       success: {
@@ -370,4 +340,6 @@ export let vars = createGlobalTheme(':root', {
       focusShadow: this.focusShadow,
     }
   },
+  */
+  focusShadow: `0 0 4px 2px ${colors.primaryDark}`,
 })

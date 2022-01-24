@@ -6,7 +6,8 @@ globalStyle('html, body', {
   fontSize: vars.fontSizes[1],
   fontFamily: vars.fonts.base,
   color: vars.colors.black,
-  backgroundColor: vars.colors.white,
+  backgroundColor: vars.colors.background,
+  minHeight: '100vh',
 })
 
 globalStyle('*, *::before, *::after', {
