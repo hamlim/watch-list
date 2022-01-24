@@ -1,16 +1,21 @@
 import { createGlobalTheme } from '@vanilla-extract/css'
 import { breakpoints } from './theme'
+import { modularScale } from 'polished'
 
-let fontScale = 1.00125
+function createScale(ratio: number, base: number) {
+  return function (steps: number) {
+    return `${modularScale(steps, base, ratio)}px`
+  }
+}
 
-let baseFontSize = 18
+const fontScale = createScale(1.25, 16)
 
 let baseFontSizes = {
-  0: `${(1 / fontScale) * baseFontSize}px`,
-  1: `${baseFontSize}px`,
-  2: `${baseFontSize * fontScale}px`,
-  3: `${baseFontSize * (fontScale * 2)}px`,
-  4: `${baseFontSize * (fontScale * 3)}px`,
+  0: fontScale(0),
+  1: fontScale(1),
+  2: fontScale(2),
+  3: fontScale(3),
+  4: fontScale(4),
 }
 
 let fontSizes = {
@@ -19,8 +24,8 @@ let fontSizes = {
   h2: baseFontSizes[3],
   h3: baseFontSizes[2],
   h4: baseFontSizes[1],
-  h5: baseFontSizes[1],
-  h6: baseFontSizes[1],
+  h5: baseFontSizes[0],
+  h6: baseFontSizes[0],
 }
 
 let baseColors = {

@@ -19,6 +19,7 @@
     "@vanilla-extract/next-plugin": "^2.0.1",
     "nanopop": "^2",
     "next": "latest",
+    "polished": "^4.1.4",
     "rainbow-sprinkles": "^0.6.0",
     "react": "experimental",
     "react-dom": "experimental",
