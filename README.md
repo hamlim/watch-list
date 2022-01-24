@@ -1,6 +1,6 @@
-# Template Next.js App
+# Watch List
 
-This repo acts as a template repo for some of my Next.js applications.
+A shared movie/show list manager!
 
 ## Getting Started:
 
@@ -23,3 +23,7 @@ When you're ready to deploy to production:
 ```sh
 yarn deploy-prod
 ```
+
+## Configuring the DB:
+
+TODO!
