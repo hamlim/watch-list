@@ -1,10 +1,13 @@
-const withMDX = require('@next/mdx')()
+let { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin')
+let withVanillaExtract = createVanillaExtractPlugin()
 
-module.exports = withMDX({
-  pageExtensions: ['mdx', 'jsx', 'js', 'ts', 'tsx'],
+/** @type {import('next').NextConfig} */
+module.exports = withVanillaExtract({
+  reactStrictMode: true,
+  swcMinify: true,
   experimental: {
-    reactRefresh: true,
-    modern: true,
-    reactRoot: 'concurrent',
+    // Don't seem to work 😞
+    // concurrentFeatures: true,
+    // serverComponents: true,
   },
 })
