@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { rainbowSprinkles } from 'rainbow-sprinkles'
 import type { AllSystemProps } from 'rainbow-sprinkles'
 import { vars } from '../../vars.css'
