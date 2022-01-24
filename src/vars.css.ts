@@ -51,7 +51,6 @@ let baseColors = {
   gray700: '#7f8a93',
   gray800: '#5f6e78',
   gray900: '#374047',
-
   blue000: '#e4f0f9',
   blue100: '#c6e1f3',
   blue200: '#a5cfed',
@@ -82,16 +81,16 @@ let baseColors = {
   violet700: '#4300a1',
   violet800: '#370084',
   violet900: '#27005e',
-  ffuschia000: '#f9e9fa',
-  ffuschia100: '#f2d1f5',
-  ffuschia200: '#ebb5f0',
-  ffuschia300: '#e293e9',
-  ffuschia400: '#d665e0',
-  ffuschia500: '#bb00cc',
-  ffuschia600: '#a900b8',
-  ffuschia700: '#9400a2',
-  ffuschia800: '#7b0086',
-  ffuschia900: '#580061',
+  fuschia000: '#f9e9fa',
+  fuschia100: '#f2d1f5',
+  fuschia200: '#ebb5f0',
+  fuschia300: '#e293e9',
+  fuschia400: '#d665e0',
+  fuschia500: '#bb00cc',
+  fuschia600: '#a900b8',
+  fuschia700: '#9400a2',
+  fuschia800: '#7b0086',
+  fuschia900: '#580061',
   pink000: '#fae9f3',
   pink100: '#f5d1e6',
   pink200: '#f0b6d8',
@@ -177,45 +176,45 @@ let baseColors = {
 let colors = {
   ...baseColors,
   white: '#fdfefe',
-  get primary() {
+  get primary(): string {
     return this.blue500
   },
-  get primaryLight() {
+  get primaryLight(): string {
     return this.blue200
   },
-  get primaryDark() {
+  get primaryDark(): string {
     return this.blue700
   },
-  get secondary() {
+  get secondary(): string {
     return this.teal500
   },
-  get secondaryLight() {
+  get secondaryLight(): string {
     return this.teal200
   },
-  get secondaryDark() {
+  get secondaryDark(): string {
     return this.teal700
   },
-  get tertiary() {
+  get tertiary(): string {
     return this.violet500
   },
-  get tertiaryLight() {
+  get tertiaryLight(): string {
     return this.violet200
   },
-  get tertiaryDark() {
+  get tertiaryDark(): string {
     return this.violet700
   },
 
-  get disabledBg() {
+  get disabledBg(): string {
     return this.gray200
   },
-  get disabledFill() {
+  get disabledFill(): string {
     return this.gray500
   },
 }
 
 export let vars = createGlobalTheme(':root', {
   space: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40].reduce(
-    (acc, val) => ({ ...acc, [val]: `${val}px` }),
+    (acc, val, idx) => ({ ...acc, [idx]: `${val}px` }),
     {},
   ),
   fontSizes,
