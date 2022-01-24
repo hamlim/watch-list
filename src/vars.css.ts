@@ -1,13 +1,5 @@
 import { createGlobalTheme } from '@vanilla-extract/css'
-
-let baseBreakpoint = 20
-
-let breakpoints = [
-  baseBreakpoint,
-  baseBreakpoint * 2,
-  baseBreakpoint * 3,
-  baseBreakpoint * 4,
-].reduce((acc, val) => ({ ...acc, [val]: `${val}em` }), {})
+import { breakpoints } from './theme'
 
 let fontScale = 1.00125
 
@@ -213,12 +205,6 @@ export let vars = createGlobalTheme(':root', {
     top: '50',
   },
   breakpoints,
-  mediaQueries: {
-    small: `@media screen and (min-width: ${breakpoints[0]})`,
-    medium: `@media screen and (min-width: ${breakpoints[1]})`,
-    large: `@media screen and (min-width: ${breakpoints[2]})`,
-    xLarge: `@media screen and (min-width: ${breakpoints[3]})`,
-  },
   colors,
   lists: {
     base: {

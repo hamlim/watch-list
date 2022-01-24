@@ -2,17 +2,17 @@
 import { rainbowSprinkles } from 'rainbow-sprinkles'
 import type { AllSystemProps } from 'rainbow-sprinkles'
 import { vars } from '../../vars.css'
-
-// const makeQuery = (val: number) => {
-//   return { '@media': `screen and (min-width: ${val})` }
-// }
+import { breakpoints } from '../../theme'
 
 const { createSystemPropCss, getBoxProps, properties, config } =
   rainbowSprinkles({
     conditions: {
       all: {},
       _: {},
-      ...vars.mediaQueries,
+      small: { '@media': `@media screen and (min-width: ${breakpoints[0]})` },
+      medium: { '@media': `@media screen and (min-width: ${breakpoints[1]})` },
+      large: { '@media': `@media screen and (min-width: ${breakpoints[2]})` },
+      xLarge: { '@media': `@media screen and (min-width: ${breakpoints[3]})` },
     },
     defaultCondition: 'all',
     properties: {
@@ -29,6 +29,9 @@ const { createSystemPropCss, getBoxProps, properties, config } =
       color: vars.colors,
       backgroundColor: vars.colors,
       maxWidth: vars.sizes,
+      fontSize: vars.fontSizes,
+      display: true,
+      flexDirection: true,
     },
     shorthands: {
       m: ['margin'],
