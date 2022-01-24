@@ -9,12 +9,12 @@ let breakpoints = [
   baseBreakpoint * 4,
 ].reduce((acc, val) => ({ ...acc, [val]: `${val}em` }), {})
 
-let fontScale = 1.2
+let fontScale = 1.00125
 
 let baseFontSize = 18
 
 let baseFontSizes = {
-  0: `${0.8 * baseFontSize}px`,
+  0: `${(1 / fontScale) * baseFontSize}px`,
   1: `${baseFontSize}px`,
   2: `${baseFontSize * fontScale}px`,
   3: `${baseFontSize * (fontScale * 2)}px`,
