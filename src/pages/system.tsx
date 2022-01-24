@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react'
 import Box from '../components/Box'
-import * as styles from './system.css'
+import * as styles from '../system.css'
 
 let colors = {
   black: '#374047',

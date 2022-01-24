@@ -1,9 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { vars } from '../vars.css'
-
-export let header = style({
-  padding: vars.space[4],
-})
+import { vars } from '../../vars.css'
 
 export let container = style({
   maxWidth: vars.sizes.content,
@@ -36,4 +32,8 @@ export let actions = style({
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'space-around',
+})
+
+export let header = style({
+  padding: vars.space[4],
 })

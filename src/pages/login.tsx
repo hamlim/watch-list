@@ -1,21 +1,28 @@
 import Link from '../components/Link'
-import * as styles from './login.css'
+import {
+  Container,
+  Header,
+  Home,
+  TitleWrap,
+  Title,
+  Actions,
+} from '../components/Page'
 
 export default function App() {
   return (
-    <div className={styles.container}>
-      <header className={styles.header}>
+    <Container>
+      <Header>
         <Link href="/">
-          <h3>Watch List</h3>
+          <Home>Watch List</Home>
         </Link>
-      </header>
-      <div className={styles.titleWrap}>
-        <h1 className={styles.title}>Login to Watch List</h1>
-      </div>
-      <div className={styles.actions}>
+      </Header>
+      <TitleWrap>
+        <Title>Login to Watch List</Title>
+      </TitleWrap>
+      <Actions>
         <p>Don't have an account yet?</p>
         <Link href="/signup">Sign-up</Link>
-      </div>
-    </div>
+      </Actions>
+    </Container>
   )
 }

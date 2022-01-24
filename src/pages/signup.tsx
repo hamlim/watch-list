@@ -1,21 +1,28 @@
 import Link from '../components/Link'
-import * as styles from './signup.css'
+import {
+  Container,
+  Actions,
+  Header,
+  TitleWrap,
+  Home,
+  Title,
+} from '../components/Page'
 
-export default function App() {
+export default function Signup() {
   return (
-    <div className={styles.container}>
-      <header className={styles.header}>
+    <Container>
+      <Header>
         <Link href="/">
-          <h3>Watch List</h3>
+          <Home>Watch List</Home>
         </Link>
-      </header>
-      <div className={styles.titleWrap}>
-        <h1 className={styles.title}>Sign-up to Watch List</h1>
-      </div>
-      <div className={styles.actions}>
+      </Header>
+      <TitleWrap>
+        <Title>Sign-up to Watch List</Title>
+      </TitleWrap>
+      <Actions>
         <p>Already have an account?</p>
         <Link href="/login">Login</Link>
-      </div>
-    </div>
+      </Actions>
+    </Container>
   )
 }

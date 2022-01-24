@@ -1,16 +1,9 @@
 import { style } from '@vanilla-extract/css'
-import { vars } from '../vars.css'
-
-export let header = style({
-  padding: vars.space[4],
-})
+import { vars } from '../../vars.css'
 
 export let container = style({
   maxWidth: vars.sizes.content,
   margin: '0 auto',
-  display: 'grid',
-  gridTemplateRows: '1fr 2fr 1fr',
-  minHeight: '100vh',
 })
 
 export let title = style({
@@ -24,6 +17,7 @@ export let subhead = style({
 })
 
 export let titleWrap = style({
+  minHeight: '75vh',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -32,6 +26,7 @@ export let titleWrap = style({
 })
 
 export let actions = style({
+  minHeight: '25vh',
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
