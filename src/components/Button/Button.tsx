@@ -2,9 +2,10 @@ import { forwardRef, ReactNode } from 'react'
 import Box from '../Box'
 import { cx } from '../utils'
 import { useTapable } from '@ds-pack/components'
+import { SystemProps } from '../Box/system-props'
 import * as styles from './Button.css'
 
-export interface Props {
+export interface Props extends SystemProps {
   variant: 'primary' | 'secondary' | 'ghost' | 'text'
   disabled?: boolean
   children: ReactNode

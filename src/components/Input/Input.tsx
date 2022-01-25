@@ -1,9 +1,10 @@
 import { forwardRef, ReactNode, useState } from 'react'
 import ReactDOM from 'react-dom'
 import Box from '../Box'
+import { SystemProps } from '../Box/system-props'
 import { input } from './Input.css'
 
-interface LabelProps {
+interface LabelProps extends SystemProps {
   children: ReactNode
   [key: string]: any
 }
@@ -26,7 +27,7 @@ function flush(cb) {
   ReactDOM.flushSync(cb)
 }
 
-interface InputProps {
+interface InputProps extends SystemProps {
   disabled?: boolean
   value: string
   onChange: (val: string) => void

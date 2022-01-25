@@ -1,4 +1,4 @@
-import { ReactNode, forwardRef, ReactElement } from 'react'
+import { ReactNode, forwardRef } from 'react'
 import styles from './Box.css'
 import { getBoxProps, properties, SystemProps } from './system-props'
 import { extractAtomsFromProps } from 'rainbow-sprinkles'
