@@ -7,6 +7,7 @@ interface BoxProps extends SystemProps {
   children?: ReactNode
   className?: string
   is?: any
+  [key: string]: any
 }
 
 export let Box = forwardRef(

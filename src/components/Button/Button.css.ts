@@ -26,7 +26,7 @@ export let button = style({
 export let primary = style({
   backgroundColor: vars.colors.primary,
   color: vars.colors.white,
-  padding: '0.5em 1em',
+  padding: '0.5em 0.5em',
   border: `solid 2px ${vars.colors.primary}`,
   selectors: {
     '&[disabled],&[disabled]:focus,&[disabled]:hover': {
@@ -43,7 +43,7 @@ export let primary = style({
 export let secondary = style({
   backgroundColor: vars.colors.secondary,
   color: vars.colors.white,
-  padding: '0.5em 1em',
+  padding: '0.5em 0.5em',
   border: `solid 2px ${vars.colors.secondary}`,
   selectors: {
     '&[disabled],&[disabled]:focus,&[disabled]:hover': {
@@ -60,7 +60,7 @@ export let secondary = style({
 export let ghost = style({
   backgroundColor: vars.colors.white,
   color: vars.colors.primary,
-  padding: '0.5em 1em',
+  padding: '0.5em 0.5em',
   border: `solid 2px ${vars.colors.primary}`,
   selectors: {
     '&[disabled],&[disabled]:focus,&[disabled]:hover': {

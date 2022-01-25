@@ -1,6 +1,6 @@
 import Box from '../../components/Box'
-import * as styles from '../../system.css'
 import Button from '../../components/Button'
+import * as styles from '../../system.css'
 
 let types = {
   primary: {
@@ -40,7 +40,7 @@ export default function ButtonPage() {
       <Box className={styles.container} m="3">
         {Object.keys(types).map((type: string) => (
           <Button key={type} {...types[type]}>
-            {type} Button
+            {type}
           </Button>
         ))}
       </Box>
