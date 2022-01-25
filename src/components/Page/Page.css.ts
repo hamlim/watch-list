@@ -6,7 +6,7 @@ export let container = style({
   margin: '0 auto',
   display: 'grid',
   gridTemplateRows: '1fr 2fr 1fr',
-  minHeight: '100vh',
+  minHeight: '90vh',
 })
 
 export let title = style({
@@ -28,6 +28,7 @@ export let titleWrap = style({
 })
 
 export let actions = style({
+  width: '100%',
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
@@ -36,4 +37,5 @@ export let actions = style({
 
 export let header = style({
   padding: vars.space[4],
+  textAlign: 'center',
 })

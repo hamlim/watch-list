@@ -17,7 +17,7 @@ export let subhead = style({
 })
 
 export let titleWrap = style({
-  minHeight: '75vh',
+  minHeight: '100vh',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -26,7 +26,7 @@ export let titleWrap = style({
 })
 
 export let actions = style({
-  minHeight: '25vh',
+  width: '100%',
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',

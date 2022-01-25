@@ -1,3 +1,4 @@
+import Box from '../Box'
 import * as styles from './LandingPage.css'
 
 export function Container({ children }) {
@@ -13,7 +14,11 @@ export function Subhead({ children }) {
 }
 
 export function Actions({ children }) {
-  return <div className={styles.actions}>{children}</div>
+  return (
+    <Box m="10" className={styles.actions}>
+      {children}
+    </Box>
+  )
 }
 
 export function Title({ children }) {

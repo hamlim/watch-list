@@ -13,6 +13,7 @@
     "@babel/runtime": "^7",
     "@ds-pack/components": "*",
     "@ds-pack/use-refs": "^1",
+    "@supabase/supabase-js": "^1.29.4",
     "@vanilla-extract/babel-plugin": "^1.1.4",
     "@vanilla-extract/css": "^1.6.8",
     "@vanilla-extract/dynamic": "^2.0.2",

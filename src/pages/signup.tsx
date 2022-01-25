@@ -18,11 +18,11 @@ export default function Signup() {
       </Header>
       <TitleWrap>
         <Title>Sign-up to Watch List</Title>
+        <Actions>
+          <p>Already have an account?</p>
+          <Link href="/login">Login</Link>
+        </Actions>
       </TitleWrap>
-      <Actions>
-        <p>Already have an account?</p>
-        <Link href="/login">Login</Link>
-      </Actions>
     </Container>
   )
 }

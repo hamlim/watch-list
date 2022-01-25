@@ -18,11 +18,11 @@ export default function App() {
       </Header>
       <TitleWrap>
         <Title>Login to Watch List</Title>
+        <Actions>
+          <p>Don't have an account yet?</p>
+          <Link href="/signup">Sign-up</Link>
+        </Actions>
       </TitleWrap>
-      <Actions>
-        <p>Don't have an account yet?</p>
-        <Link href="/signup">Sign-up</Link>
-      </Actions>
     </Container>
   )
 }
