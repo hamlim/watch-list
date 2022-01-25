@@ -12,9 +12,16 @@ export let input = style({
   color: vars.colors.black,
   outline: 'none',
   fontSize: vars.fontSizes[0],
+  borderColor: vars.colors.black,
+  backgroundColor: vars.colors.gray000,
   selectors: {
-    '&:focus': {
+    '&:focus,&:hover': {
       boxShadow: vars.focusShadow,
+      borderColor: vars.colors.primary,
+    },
+    '&[disabled]': {
+      borderColor: vars.colors.disabledFill,
+      backgroundColor: vars.colors.disabledBg,
     },
   },
 })

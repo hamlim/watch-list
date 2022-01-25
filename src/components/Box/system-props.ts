@@ -32,6 +32,8 @@ const { createSystemPropCss, getBoxProps, properties, config } =
       fontSize: vars.fontSizes,
       display: true,
       flexDirection: true,
+      alignItems: true,
+      justifyContent: true,
     },
     shorthands: {
       m: ['margin'],

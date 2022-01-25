@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef, ReactNode } from 'react'
 import Box from '../Box'
 import { cx } from '../utils'
 import { useTapable } from '@ds-pack/components'
@@ -7,6 +7,8 @@ import * as styles from './Button.css'
 export interface Props {
   variant: 'primary' | 'secondary' | 'ghost' | 'text'
   disabled?: boolean
+  children: ReactNode
+  onClick: () => void
 }
 
 let Tapable = forwardRef(function Tapable(props, ref) {
