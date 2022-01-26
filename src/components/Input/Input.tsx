@@ -1,5 +1,4 @@
-import { forwardRef, ReactNode, useState } from 'react'
-import ReactDOM from 'react-dom'
+import { forwardRef, ReactNode } from 'react'
 import Box from '../Box'
 import { SystemProps } from '../Box/system-props'
 import { input } from './Input.css'
@@ -20,12 +19,6 @@ let Label = forwardRef(function Label(props: LabelProps, ref) {
     />
   )
 })
-
-// @see https://github.com/facebook/react/issues/18591#issuecomment-613026224
-function flush(cb) {
-  // @ts-ignore
-  ReactDOM.flushSync(cb)
-}
 
 interface InputProps extends SystemProps {
   disabled?: boolean
@@ -50,21 +43,8 @@ export let Input = forwardRef(function Input(
   }: InputProps,
   ref,
 ) {
-  let [focused, setFocused] = useState(autoFocus)
-
-  function handleFocus() {
-    setFocused(true)
-  }
-  function handleBlur() {
-    setFocused(false)
-  }
-
   return (
-    <Label
-      onFocus={() => flush(handleFocus)}
-      onBlur={() => flush(handleBlur)}
-      {...props}
-    >
+    <Label {...props}>
       {children}
       <Box
         is="input"

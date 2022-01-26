@@ -39,6 +39,8 @@ const { createSystemPropCss, getBoxProps, properties, config } =
       flexDirection: true,
       alignItems: true,
       justifyContent: true,
+      flexGrow: true,
+      flexShrink: true,
     },
     shorthands: {
       m: ['margin'],

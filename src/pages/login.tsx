@@ -1,3 +1,4 @@
+import ErrorBoundary from '../components/ErrorBoundary'
 import Link from '../components/Link'
 import {
   Container,
@@ -7,7 +8,7 @@ import {
   Title,
   Actions,
 } from '../components/Page'
-import LoginForm from '../views/login'
+import LoginForm from '../views/LoginForm'
 
 export default function App() {
   return (
@@ -19,7 +20,9 @@ export default function App() {
       </Header>
       <TitleWrap>
         <Title>Login to Watch List</Title>
-        <LoginForm />
+        <ErrorBoundary>
+          <LoginForm />
+        </ErrorBoundary>
         <Actions>
           <p>Don't have an account yet?</p>
           <Link href="/signup">Sign-up</Link>

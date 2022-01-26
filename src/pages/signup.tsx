@@ -1,4 +1,6 @@
+import ErrorBoundary from '../components/ErrorBoundary'
 import Link from '../components/Link'
+import Box from '../components/Box'
 import {
   Container,
   Actions,
@@ -7,7 +9,7 @@ import {
   Home,
   Title,
 } from '../components/Page'
-import SignupForm from '../views/signup'
+import SignupForm from '../views/SignupForm'
 
 export default function Signup() {
   return (
@@ -19,7 +21,9 @@ export default function Signup() {
       </Header>
       <TitleWrap>
         <Title>Sign-up to Watch List</Title>
-        <SignupForm />
+        <ErrorBoundary props={{ m: '10' }}>
+          <SignupForm />
+        </ErrorBoundary>
         <Actions>
           <p>Already have an account?</p>
           <Link href="/login">Login</Link>
