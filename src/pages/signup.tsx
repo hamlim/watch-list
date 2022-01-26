@@ -21,7 +21,7 @@ export default function Signup() {
       </Header>
       <TitleWrap>
         <Title>Sign-up to Watch List</Title>
-        <ErrorBoundary props={{ m: '10' }}>
+        <ErrorBoundary props={{ my: '10' }}>
           <SignupForm />
         </ErrorBoundary>
         <Actions>

@@ -23,13 +23,13 @@ export default class ErrorBoundary extends Component<Props> {
             An Error Occurred!
           </Box>
           <Box is="pre" mb="2">
-            {this.state.err.toString()}
+            {this.state.err.message
+              ? this.state.err.message
+              : this.state.err.toString()}
           </Box>
-          <Box display="flex" justifyContent="flex-end">
-            <Button variant="text" onClick={() => this.setState({ err: null })}>
-              Reset
-            </Button>
-          </Box>
+          <Button variant="text" onClick={() => this.setState({ err: null })}>
+            Reset
+          </Button>
         </Box>
       )
     }

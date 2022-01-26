@@ -20,7 +20,7 @@ export default function App() {
       </Header>
       <TitleWrap>
         <Title>Login to Watch List</Title>
-        <ErrorBoundary>
+        <ErrorBoundary props={{ my: '10' }}>
           <LoginForm />
         </ErrorBoundary>
         <Actions>
