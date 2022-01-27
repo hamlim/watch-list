@@ -1,7 +1,16 @@
-export default function List({ listId }) {
-  console.log(listId)
+import { ErrorBoundary, Redirect } from '../../components'
+import ListView from '../../views/List'
 
-  return null
+export default function List({ listId }) {
+  if (!listId) {
+    return <Redirect to="/app" />
+  }
+
+  return (
+    <ErrorBoundary>
+      <ListView listId={listId} />
+    </ErrorBoundary>
+  )
 }
 
 export async function getServerSideProps(context) {
