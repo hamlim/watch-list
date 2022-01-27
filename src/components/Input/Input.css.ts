@@ -3,6 +3,7 @@ import { vars } from '../../vars.css'
 
 export let input = style({
   border: 'solid 2px',
+  height: '50px',
   width: '100%',
   display: 'inline-flex',
   flexGrow: 1,
