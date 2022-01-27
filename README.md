@@ -30,9 +30,11 @@ TODO!
 
 ## Documentation:
 
-- `/system`
+- `/documentation`
   - colors
-- `/system/button`
+- `/documentation/button`
   - Buttons
-- `/system/type-scale`
+- `/documentation/input`
+  - Inputs
+- `/documentation/type-scale`
   - Font sizes
