@@ -26,7 +26,19 @@ yarn deploy-prod
 
 ## Configuring the DB:
 
-TODO!
+### Local Dev:
+
+Create a `.env.local` file and add the following content:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=<your supabase url here>
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<your supabase anonymous key here>
+```
+
+### Production:
+
+If you're deploying on Vercel, add the above two secrets from your `.env.local`
+file to the project and deploy!
 
 ## Documentation:
 
