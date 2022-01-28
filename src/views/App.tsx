@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, useEffect } from 'react'
 import { Box, Link, Redirect } from '../components'
 import { useUser } from '../lib/userContext'
 import { Header, Home } from '../components/Page'
@@ -17,6 +17,11 @@ function Lists({ userId }) {
         .eq('creator', userId)
     ).data
   })
+
+  useEffect(() => {
+    let doc = document.documentElement
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+  }, [])
 
   return lists.map((list, idx: number) => (
     <Box
