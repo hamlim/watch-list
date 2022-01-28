@@ -10,10 +10,6 @@ globalStyle('html, body', {
   minHeight: '100%',
 })
 
-// globalStyle('html', {
-//   height: '-webkit-fill-available',
-// })
-
 globalStyle('#__next', {
   minHeight: '100%',
 })
