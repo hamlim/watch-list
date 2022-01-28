@@ -9,10 +9,18 @@ const { createSystemPropCss, getBoxProps, properties, config } =
     conditions: {
       all: {},
       _: {},
-      small: { '@media': `@media screen and (min-width: ${breakpoints[0]})` },
-      medium: { '@media': `@media screen and (min-width: ${breakpoints[1]})` },
-      large: { '@media': `@media screen and (min-width: ${breakpoints[2]})` },
-      xLarge: { '@media': `@media screen and (min-width: ${breakpoints[3]})` },
+      small: {
+        '@media': `@media screen and (min-width: ${breakpoints.small})`,
+      },
+      medium: {
+        '@media': `@media screen and (min-width: ${breakpoints.medium})`,
+      },
+      large: {
+        '@media': `@media screen and (min-width: ${breakpoints.large})`,
+      },
+      extraLarge: {
+        '@media': `@media screen and (min-width: ${breakpoints.extraLarge})`,
+      },
     },
     defaultCondition: 'all',
     properties: {

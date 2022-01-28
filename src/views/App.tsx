@@ -46,29 +46,30 @@ export default function App() {
 
   return (
     <Box
-      className={styles.layout}
       maxWidth={{
         _: '95vw',
-        60: 'content',
+        large: 'content',
       }}
       margin="0 auto"
       minHeight="100%"
-      display="grid"
-      gridTemplateRows="75px 1fr 75px"
+      display="flex"
+      flexDirection="column"
     >
-      <Header>
-        <Home>Watch List</Home>
-      </Header>
-      <Box>
-        <Box is="h3" mb="4">
-          My Lists:
+      <Box flexGrow="1" display="grid" gridTemplateRows="75px 1fr 75px">
+        <Header>
+          <Home>Watch List</Home>
+        </Header>
+        <Box>
+          <Box is="h3" mb="4">
+            My Lists:
+          </Box>
+          <Suspense fallback="Loading...">
+            <Lists userId={user.id} />
+          </Suspense>
         </Box>
-        <Suspense fallback="Loading...">
-          <Lists userId={user.id} />
-        </Suspense>
-      </Box>
-      <Box mt="4" display="flex" alignItems="center" justifyContent="center">
-        <Link href="/create">Create a new list</Link>
+        <Box mt="4" display="flex" alignItems="center" justifyContent="center">
+          <Link href="/create">Create a new list</Link>
+        </Box>
       </Box>
     </Box>
   )

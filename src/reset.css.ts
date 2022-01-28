@@ -7,15 +7,15 @@ globalStyle('html, body', {
   fontFamily: vars.fonts.base,
   color: vars.colors.black,
   backgroundColor: vars.colors.background,
-  minHeight: '100vh',
+  minHeight: '100%',
 })
 
-globalStyle('html', {
-  height: '-webkit-fill-available',
-})
+// globalStyle('html', {
+//   height: '-webkit-fill-available',
+// })
 
 globalStyle('#__next', {
-  minHeight: '100vh',
+  minHeight: '100%',
 })
 
 globalStyle('*, *::before, *::after', {
