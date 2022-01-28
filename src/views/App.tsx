@@ -52,7 +52,7 @@ export default function App() {
         60: 'content',
       }}
       margin="0 auto"
-      minHeight="100vh"
+      minHeight="var(--app-height, 100vh)"
       display="grid"
       gridTemplateRows="75px 1fr 75px"
     >
