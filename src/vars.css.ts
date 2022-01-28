@@ -165,7 +165,7 @@ let baseColors = {
 let colors = {
   ...baseColors,
   white: '#fdfefe',
-  background: baseColors.orange000,
+  background: baseColors.orange100,
   primary: baseColors.blue500,
   primaryLight: baseColors.blue200,
   primaryDark: baseColors.blue700,

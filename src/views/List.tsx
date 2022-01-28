@@ -1,6 +1,5 @@
 import { useState, Suspense } from 'react'
 import { Box, Button, Input, Redirect, Link } from '../components'
-import { Header } from '../components/Page'
 import { supabase } from '../lib/supabaseClient'
 import { useCache } from '../lib/useCache.client'
 import useErrorBoundary from '../lib/useErrorBoundary'

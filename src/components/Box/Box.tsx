@@ -11,9 +11,15 @@ interface BoxProps extends SystemProps {
 }
 
 export let Box = forwardRef(
-  ({ children, className, is: El = 'div', ...props }: BoxProps, ref: any) => {
+  (
+    { children, className, style = {}, is: El = 'div', ...props }: BoxProps,
+    ref: any,
+  ) => {
     let { systemProps, otherProps } = extractAtomsFromProps(props, properties)
-    let { className: localClassname, style } = getBoxProps(styles, systemProps)
+    let { className: localClassname, style: localStyle } = getBoxProps(
+      styles,
+      systemProps,
+    )
 
     return (
       <El
@@ -22,7 +28,7 @@ export let Box = forwardRef(
         className={
           className ? localClassname + ' ' + className : localClassname
         }
-        style={style}
+        style={{ ...style, ...localStyle }}
       >
         {children}
       </El>

@@ -25,7 +25,6 @@ interface InputProps extends SystemProps {
   value: string
   onChange: (val: string) => void
   children: ReactNode
-  autoFocus?: boolean
   placeholder?: string
   inputProps?: {}
 }
@@ -36,7 +35,6 @@ export let Input = forwardRef(function Input(
     value,
     onChange,
     children,
-    autoFocus,
     placeholder,
     inputProps,
     ...props

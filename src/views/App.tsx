@@ -25,13 +25,14 @@ function Lists({ userId }) {
       key={list.id}
       mt={idx !== 0 ? '4' : null}
     >
-      <Box is="h4">{list.title}</Box>
+      <Box is="h4">
+        <Link href={`/list/${list.id}`}>{list.title}</Link>
+      </Box>
       {list.list.slice(0, 2).map((entry) => (
         <Box is="li" key={entry.title}>
           {entry.title}
         </Box>
       ))}
-      <Link href={`/list/${list.id}`}>View List</Link>
     </Box>
   ))
 }
@@ -44,15 +45,29 @@ export default function App() {
   }
 
   return (
-    <Box>
+    <Box
+      className={styles.layout}
+      maxWidth={{
+        _: '95vw',
+        60: 'content',
+      }}
+      margin="0 auto"
+      minHeight="100vh"
+      display="grid"
+      gridTemplateRows="75px 1fr 75px"
+    >
       <Header>
         <Home>Watch List</Home>
       </Header>
-      <Box m="4">
-        <Box is="h3">My Lists:</Box>
+      <Box>
+        <Box is="h3" mb="4">
+          My Lists:
+        </Box>
         <Suspense fallback="Loading...">
           <Lists userId={user.id} />
         </Suspense>
+      </Box>
+      <Box mt="4" display="flex" alignItems="center" justifyContent="center">
         <Link href="/create">Create a new list</Link>
       </Box>
     </Box>

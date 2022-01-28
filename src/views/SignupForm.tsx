@@ -49,7 +49,7 @@ export default function SignupForm() {
         width="100%"
         value={email}
         onChange={setEmail}
-        inputProps={{ autoComplete: 'email' }}
+        inputProps={{ autoComplete: 'email', autoFocus: true }}
       >
         Email:
       </Input>

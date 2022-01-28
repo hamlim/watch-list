@@ -10,6 +10,14 @@ globalStyle('html, body', {
   minHeight: '100vh',
 })
 
+globalStyle('html', {
+  height: '-webkit-fill-available',
+})
+
+globalStyle('#__next', {
+  minHeight: '100vh',
+})
+
 globalStyle('*, *::before, *::after', {
   boxSizing: 'inherit',
 })
