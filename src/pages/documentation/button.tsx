@@ -1,6 +1,6 @@
 import Box from '../../components/Box'
 import Button from '../../components/Button'
-import * as styles from '../../system.css'
+import * as styles from '../../documentation.css'
 
 let types = {
   primary: {

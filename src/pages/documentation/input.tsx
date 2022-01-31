@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Box from '../../components/Box'
 import Input from '../../components/Input'
-import * as styles from '../../system.css'
+import * as styles from '../../documentation.css'
 
 let types = {
   primary: {},

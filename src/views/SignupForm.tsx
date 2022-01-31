@@ -28,7 +28,7 @@ export default function SignupForm() {
       }
       setUser(user)
       setLoading(false)
-      router.push('/app')
+      router.push('/confirm')
     } catch (error) {
       trigger(error)
     }

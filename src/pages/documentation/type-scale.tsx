@@ -1,5 +1,5 @@
 import Box from '../../components/Box'
-import * as styles from '../../system.css'
+import * as styles from '../../documentation.css'
 
 export default function ButtonPage() {
   return (
