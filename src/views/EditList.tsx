@@ -22,6 +22,21 @@ function EditListForm({ listId, user }) {
   let [listName, setListName] = useState(list.title)
   let trigger = useErrorBoundary()
   let [loading, setLoading] = useState(false)
+  let [success, setSuccess] = useState(true)
+
+  useEffect(() => {
+    let isActive = true
+    if (success) {
+      setTimeout(() => {
+        if (isActive) {
+          setSuccess(false)
+        }
+      }, 2000)
+    }
+    return () => {
+      isActive = false
+    }
+  }, [success])
 
   async function updateListName() {
     try {
@@ -39,6 +54,7 @@ function EditListForm({ listId, user }) {
       if (error) {
         throw error
       }
+      setSuccess(true)
       updateCache(listId, listResult)
       setLoading(false)
     } catch (err) {
@@ -47,18 +63,32 @@ function EditListForm({ listId, user }) {
   }
 
   return (
-    <Box display="flex" alignItems="flex-end">
-      <Input flexGrow="1" value={listName} onChange={setListName}>
-        List Name:
-      </Input>
-      <Button
-        disabled={loading}
-        ml="4"
-        variant="primary"
-        onClick={updateListName}
-      >
-        Update
-      </Button>
+    <Box>
+      {success ? (
+        <Box
+          p="4"
+          borderRadius="small"
+          backgroundColor="teal200"
+          color="green900"
+          mb="4"
+          border="solid 2px"
+        >
+          Updated!
+        </Box>
+      ) : null}
+      <Box display="flex" alignItems="flex-end">
+        <Input flexGrow="1" value={listName} onChange={setListName}>
+          List Name:
+        </Input>
+        <Button
+          disabled={loading}
+          ml="4"
+          variant="primary"
+          onClick={updateListName}
+        >
+          Update
+        </Button>
+      </Box>
     </Box>
   )
 }

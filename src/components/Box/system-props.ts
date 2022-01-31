@@ -57,6 +57,8 @@ const { createSystemPropCss, getBoxProps, properties, config } =
       left: true,
       right: true,
       bottom: true,
+      borderRadius: vars.radii,
+      border: true,
     },
     shorthands: {
       m: ['margin'],

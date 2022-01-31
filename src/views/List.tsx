@@ -54,6 +54,7 @@ function ListContents({ id }) {
             ...list.list,
             {
               title: addition,
+              id: list.list.length,
             },
           ],
         })
@@ -80,7 +81,7 @@ function ListContents({ id }) {
         let { error, data } = await supabase
           .from('[watch-list] Lists')
           .update({
-            list: list.list.filter((e) => e.title !== entry.title),
+            list: list.list.filter((e) => e.id !== entry.id),
           })
           .eq('id', id)
         if (error) {
@@ -98,20 +99,12 @@ function ListContents({ id }) {
       <Box
         p="4"
         is="header"
-        position="relative"
         display="flex"
         justifyContent="space-between"
         alignItems="center"
       >
         <Link href="/app">Back</Link>
-        <Box
-          position="absolute"
-          top="50%"
-          left="50%"
-          transform="translate(-50%, -50%)"
-          is="h4"
-          fontSize="2"
-        >
+        <Box is="h4" fontSize="2">
           {list.title}
         </Box>
         <Link href={`/edit/${list.id}`}>Edit</Link>
