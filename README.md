@@ -33,6 +33,7 @@ Create a `.env.local` file and add the following content:
 ```env
 NEXT_PUBLIC_SUPABASE_URL=<your supabase url here>
 NEXT_PUBLIC_SUPABASE_ANON_KEY=<your supabase anonymous key here>
+// todo - movie api key: https://www.themoviedb.org/
 ```
 
 ### Production:
