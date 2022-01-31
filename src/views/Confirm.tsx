@@ -1,4 +1,4 @@
-import { Box } from '../components'
+import { Box, Link } from '../components'
 
 export default function ConfirmView() {
   return (
@@ -14,7 +14,10 @@ export default function ConfirmView() {
       <Box mb="4" is="h2" fontSize="2">
         Check your email to confirm your account!
       </Box>
-      <Box is="p">You can close this tab now 😄</Box>
+      <Box is="p">
+        Once you've confirmed your account you can go{' '}
+        <Link href="/login">Login</Link>!
+      </Box>
     </Box>
   )
 }

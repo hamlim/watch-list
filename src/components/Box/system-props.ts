@@ -60,6 +60,8 @@ const { createSystemPropCss, getBoxProps, properties, config } =
       borderRadius: vars.radii,
       border: true,
       textAlign: true,
+      fontStyle: true,
+      overflow: true,
     },
     shorthands: {
       m: ['margin'],

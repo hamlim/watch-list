@@ -4,9 +4,20 @@ import { supabase } from '../lib/supabaseClient'
 import { useCache } from '../lib/useCache.client'
 import useErrorBoundary from '../lib/useErrorBoundary'
 import { useUser } from '../lib/userContext'
+import { search, movieCache } from '../lib/movieAPI'
 import * as styles from './List.css'
 
+function FallbackEntry({ entry }) {
+  return <Box is="li">{entry.title}</Box>
+}
+
 function Entry({ entry, canEdit, onRemove }) {
+  let [movie] = useCache(movieCache, entry.id, async () => {
+    let res = await search(entry.title)
+    // default to the first result
+    return res.results[0]
+  })
+
   let [loading, setLoading] = useState(false)
 
   async function removeEntry() {
@@ -16,13 +27,23 @@ function Entry({ entry, canEdit, onRemove }) {
   }
 
   return (
-    <Box is="li" key={entry.title}>
-      {entry.title}{' '}
-      {canEdit ? (
-        <Button disabled={loading} variant="text" onClick={removeEntry}>
-          Remove
-        </Button>
-      ) : null}
+    <Box is="li" mb="4" borderRadius="medium" overflow="hidden">
+      <Box position="relative">
+        <Box
+          is="img"
+          width="100%"
+          height="auto"
+          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+        />
+        <Box className={styles.banner}>
+          <Box is="h4">{entry.title}</Box>
+          {canEdit ? (
+            <Button disabled={loading} variant="text" onClick={removeEntry}>
+              Remove
+            </Button>
+          ) : null}
+        </Box>
+      </Box>
     </Box>
   )
 }
@@ -111,12 +132,16 @@ function ListContents({ id }) {
       </Box>
       <Box is="ul" className={styles.list} mt="4">
         {list.list.map((entry) => (
-          <Entry
-            onRemove={handleRemove(entry)}
-            entry={entry}
-            canEdit={canEdit}
+          <Suspense
             key={entry.title}
-          />
+            fallback={<FallbackEntry entry={entry} />}
+          >
+            <Entry
+              onRemove={handleRemove(entry)}
+              entry={entry}
+              canEdit={canEdit}
+            />
+          </Suspense>
         ))}
       </Box>
       {canEdit ? (
@@ -141,9 +166,10 @@ function ListContents({ id }) {
 export default function List({ listId }) {
   return (
     <Box
-      maxWidth={{ _: '95vw', '60': 'content' }}
+      maxWidth={{ _: '95vw', large: 'content' }}
       mt="4"
       mx="auto"
+      mb="10"
       minHeight="100vh"
     >
       <Suspense fallback="Loading...">

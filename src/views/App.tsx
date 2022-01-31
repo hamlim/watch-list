@@ -29,10 +29,11 @@ function Lists({ userId }) {
         <Link href={`/list/${list.id}`}>{list.title}</Link>
       </Box>
       {list.list.slice(0, 2).map((entry) => (
-        <Box is="li" key={entry.title}>
+        <Box fontStyle="italic" is="li" key={entry.title}>
           {entry.title}
         </Box>
       ))}
+      {list.list.length > 2 ? <>and {list.list.length - 2} more...</> : null}
     </Box>
   ))
 }
