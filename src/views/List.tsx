@@ -95,7 +95,14 @@ function ListContents({ id }) {
 
   return (
     <>
-      <Box p="4" is="header" position="relative">
+      <Box
+        p="4"
+        is="header"
+        position="relative"
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+      >
         <Link href="/app">Back</Link>
         <Box
           position="absolute"
@@ -107,6 +114,7 @@ function ListContents({ id }) {
         >
           {list.title}
         </Box>
+        <Link href={`/edit/${list.id}`}>Edit</Link>
       </Box>
       <Box is="ul" className={styles.list} mt="4">
         {list.list.map((entry) => (

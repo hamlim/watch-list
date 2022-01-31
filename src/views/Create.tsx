@@ -27,7 +27,7 @@ export default function Create() {
   async function createList() {
     try {
       setLoading(true)
-      let { data, error } = await supabase.from('[watch-list] Lists').insert([
+      let { error } = await supabase.from('[watch-list] Lists').insert([
         {
           title: listName,
           creator: user.id,
@@ -38,7 +38,6 @@ export default function Create() {
       if (error) {
         throw error
       }
-      console.log(data)
       setLoading(false)
       setSuccess(true)
       setListName('')
